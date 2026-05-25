@@ -1,0 +1,62 @@
+{
+  "id": "create-page-checklist",
+  "type": "action",
+  "label": "Create Landing-Page QA Checklist",
+  "description": "Create a launch QA checklist for a local-service landing page.",
+  "blueprintOnly": true,
+  "implementation": {
+    "localFunction": "createPageChecklist",
+    "noHostedApi": true,
+    "noExternalRequest": true,
+    "manualReviewRequired": true
+  },
+  "input": [
+    {
+      "name": "pageUrl",
+      "type": "url",
+      "required": true,
+      "label": "Landing page URL"
+    },
+    {
+      "name": "businessName",
+      "type": "text",
+      "required": true,
+      "label": "Business name"
+    },
+    {
+      "name": "primaryOffer",
+      "type": "text",
+      "required": true,
+      "label": "Primary offer"
+    },
+    {
+      "name": "location",
+      "type": "text",
+      "required": true,
+      "label": "Target location"
+    },
+    {
+      "name": "owner",
+      "type": "text",
+      "required": false,
+      "label": "Checklist owner"
+    }
+  ],
+  "output": [
+    {
+      "name": "rows",
+      "type": "array",
+      "label": "Checklist rows"
+    },
+    {
+      "name": "csv",
+      "type": "text",
+      "label": "Checklist CSV"
+    },
+    {
+      "name": "summary",
+      "type": "collection",
+      "label": "Checklist summary"
+    }
+  ]
+}

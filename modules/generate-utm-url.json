@@ -1,0 +1,68 @@
+{
+  "id": "generate-utm-url",
+  "type": "action",
+  "label": "Generate UTM URL",
+  "description": "Build a campaign URL with normalized UTM parameters for a landing page.",
+  "blueprintOnly": true,
+  "implementation": {
+    "localFunction": "generateUtmUrl",
+    "noHostedApi": true,
+    "noExternalRequest": true,
+    "manualReviewRequired": true
+  },
+  "input": [
+    {
+      "name": "baseUrl",
+      "type": "url",
+      "required": true,
+      "label": "Landing page URL"
+    },
+    {
+      "name": "source",
+      "type": "text",
+      "required": true,
+      "label": "UTM source"
+    },
+    {
+      "name": "medium",
+      "type": "text",
+      "required": true,
+      "label": "UTM medium"
+    },
+    {
+      "name": "campaign",
+      "type": "text",
+      "required": true,
+      "label": "UTM campaign"
+    },
+    {
+      "name": "term",
+      "type": "text",
+      "required": false,
+      "label": "UTM term"
+    },
+    {
+      "name": "content",
+      "type": "text",
+      "required": false,
+      "label": "UTM content"
+    }
+  ],
+  "output": [
+    {
+      "name": "url",
+      "type": "url",
+      "label": "Generated URL"
+    },
+    {
+      "name": "params",
+      "type": "collection",
+      "label": "UTM parameters"
+    },
+    {
+      "name": "missingRequired",
+      "type": "array",
+      "label": "Missing required fields"
+    }
+  ]
+}

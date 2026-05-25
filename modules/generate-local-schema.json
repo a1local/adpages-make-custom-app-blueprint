@@ -1,0 +1,68 @@
+{
+  "id": "generate-local-schema",
+  "type": "action",
+  "label": "Generate LocalBusiness Schema",
+  "description": "Create a LocalBusiness JSON-LD payload for a service-area landing page.",
+  "blueprintOnly": true,
+  "implementation": {
+    "localFunction": "generateLocalBusinessSchema",
+    "noHostedApi": true,
+    "noExternalRequest": true,
+    "manualReviewRequired": true
+  },
+  "input": [
+    {
+      "name": "name",
+      "type": "text",
+      "required": true,
+      "label": "Business name"
+    },
+    {
+      "name": "url",
+      "type": "url",
+      "required": true,
+      "label": "Landing page URL"
+    },
+    {
+      "name": "telephone",
+      "type": "text",
+      "required": true,
+      "label": "Phone number"
+    },
+    {
+      "name": "serviceType",
+      "type": "text",
+      "required": true,
+      "label": "Primary service"
+    },
+    {
+      "name": "address",
+      "type": "collection",
+      "required": true,
+      "label": "Postal address"
+    },
+    {
+      "name": "serviceAreas",
+      "type": "array",
+      "required": true,
+      "label": "Service areas"
+    }
+  ],
+  "output": [
+    {
+      "name": "schema",
+      "type": "collection",
+      "label": "JSON-LD object"
+    },
+    {
+      "name": "scriptTag",
+      "type": "text",
+      "label": "JSON-LD script tag"
+    },
+    {
+      "name": "missingRequired",
+      "type": "array",
+      "label": "Missing required fields"
+    }
+  ]
+}

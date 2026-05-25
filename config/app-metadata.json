@@ -1,0 +1,54 @@
+{
+  "id": "adpages-custom-app",
+  "name": "AdPages Utilities for Make",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "localOnly": true,
+  "blueprintOnly": true,
+  "hostedBackend": false,
+  "requiresOAuth": false,
+  "requiresSecrets": false,
+  "requiresMakeConnection": false,
+  "writesDataAutomatically": false,
+  "trackingBeacons": false,
+  "hiddenBacklinks": false,
+  "marketplacePosition": "Make custom app blueprint and public integration guide",
+  "description": "A future Make app concept for generating UTM URLs, validating Google Ads copy, generating LocalBusiness schema, and creating landing-page QA checklists.",
+  "modules": [
+    {
+      "id": "generate-utm-url",
+      "label": "Generate UTM URL",
+      "type": "action",
+      "path": "modules/generate-utm-url.json",
+      "localFunction": "generateUtmUrl"
+    },
+    {
+      "id": "validate-ad-copy",
+      "label": "Validate Google Ads Copy",
+      "type": "action",
+      "path": "modules/validate-ad-copy.json",
+      "localFunction": "validateGoogleAdsCopy"
+    },
+    {
+      "id": "generate-local-schema",
+      "label": "Generate LocalBusiness Schema",
+      "type": "action",
+      "path": "modules/generate-local-schema.json",
+      "localFunction": "generateLocalBusinessSchema"
+    },
+    {
+      "id": "create-page-checklist",
+      "label": "Create Landing-Page QA Checklist",
+      "type": "action",
+      "path": "modules/create-page-checklist.json",
+      "localFunction": "createPageChecklist"
+    }
+  ],
+  "publishBlockers": [
+    "Hosted API execution strategy",
+    "Auth design and Make connection model",
+    "Make app review",
+    "Real scenario test in Make",
+    "Support/privacy URLs and owner metadata"
+  ]
+}
