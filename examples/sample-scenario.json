@@ -1,0 +1,66 @@
+{
+  "name": "Local service campaign QA scenario",
+  "localOnly": true,
+  "blueprintOnly": true,
+  "description": "Sample Make scenario inputs for a landing-page launch workflow.",
+  "steps": [
+    {
+      "module": "generate-utm-url",
+      "input": {
+        "baseUrl": "https://example.test/plumber-perth",
+        "source": "Google Ads",
+        "medium": "CPC",
+        "campaign": "Emergency Plumber Perth",
+        "term": "emergency plumber",
+        "content": "rsa-variant-a"
+      }
+    },
+    {
+      "module": "validate-ad-copy",
+      "input": {
+        "finalUrl": "https://example.test/plumber-perth",
+        "headlines": [
+          "Emergency Plumber Perth",
+          "Same-Day Plumbing Help",
+          "Licensed Local Plumbers"
+        ],
+        "descriptions": [
+          "Fast help for urgent plumbing jobs across Perth. Call for a same-day quote.",
+          "Clear pricing, local technicians, and practical booking options."
+        ]
+      }
+    },
+    {
+      "module": "generate-local-schema",
+      "input": {
+        "name": "Example Plumbing Perth",
+        "url": "https://example.test/plumber-perth",
+        "telephone": "+61 8 5550 0100",
+        "serviceType": "Emergency plumbing",
+        "image": "https://example.test/images/plumber-team.jpg",
+        "address": {
+          "streetAddress": "100 Example Street",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "postalCode": "6000",
+          "addressCountry": "AU"
+        },
+        "serviceAreas": [
+          "Perth",
+          "Subiaco",
+          "Mount Lawley"
+        ]
+      }
+    },
+    {
+      "module": "create-page-checklist",
+      "input": {
+        "pageUrl": "https://example.test/plumber-perth",
+        "businessName": "Example Plumbing Perth",
+        "primaryOffer": "same-day emergency plumbing quote",
+        "location": "Perth",
+        "owner": "Campaign manager"
+      }
+    }
+  ]
+}

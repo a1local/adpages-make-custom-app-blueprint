@@ -1,0 +1,55 @@
+{
+  "id": "validate-ad-copy",
+  "type": "action",
+  "label": "Validate Google Ads Copy",
+  "description": "Check responsive search ad headline and description text against default Google Ads copy limits.",
+  "blueprintOnly": true,
+  "implementation": {
+    "localFunction": "validateGoogleAdsCopy",
+    "noHostedApi": true,
+    "noExternalRequest": true,
+    "manualReviewRequired": true
+  },
+  "input": [
+    {
+      "name": "headlines",
+      "type": "array",
+      "required": true,
+      "label": "Headlines"
+    },
+    {
+      "name": "descriptions",
+      "type": "array",
+      "required": true,
+      "label": "Descriptions"
+    },
+    {
+      "name": "finalUrl",
+      "type": "url",
+      "required": false,
+      "label": "Final URL"
+    }
+  ],
+  "output": [
+    {
+      "name": "valid",
+      "type": "boolean",
+      "label": "Copy is valid"
+    },
+    {
+      "name": "issues",
+      "type": "array",
+      "label": "Blocking issues"
+    },
+    {
+      "name": "warnings",
+      "type": "array",
+      "label": "Review warnings"
+    },
+    {
+      "name": "counts",
+      "type": "collection",
+      "label": "Copy counts"
+    }
+  ]
+}

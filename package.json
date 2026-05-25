@@ -1,0 +1,39 @@
+{
+  "name": "adpages-make-custom-app-blueprint",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first Make.com custom app blueprint for AdPages UTM, ad copy, LocalBusiness schema, and landing-page QA utilities.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "make",
+    "make.com",
+    "custom-app",
+    "utm-builder",
+    "google-ads",
+    "local-business-schema",
+    "landing-page-qa",
+    "adpages"
+  ],
+  "bin": {
+    "adpages-make-blueprint": "bin/adpages-make-blueprint.mjs"
+  },
+  "files": [
+    "README.md",
+    "PRIVACY.md",
+    "bin/*.mjs",
+    "config/*.json",
+    "examples/*.json",
+    "modules/*.json",
+    "scripts/*.mjs",
+    "src/*.mjs"
+  ],
+  "scripts": {
+    "check": "node --check src/make-app.mjs && node --check bin/adpages-make-blueprint.mjs && node --check scripts/check.mjs && node --check scripts/smoke.mjs && node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "generate:sample": "node bin/adpages-make-blueprint.mjs --scenario examples/sample-scenario.json --out-dir .tmp/make-blueprint"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
